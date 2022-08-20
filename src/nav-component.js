@@ -1,9 +1,9 @@
-export function Nav(ID = null, { urlImg = [], lists = [], ALT = String } = {}) {
+export function NavHelper(ID = null, { urlImg = null, lists = [], ALT = String } = {}) {
     document.getElementById(ID)
         .appendChild(createNav(lists, urlImg, ALT));
 }
 
-function createNav(lists, urlImg, ALT) {
+function createNav({ lists, urlImg, ALT } = {}) {
     let navElement = document.createElement('nav');
     navElement.setAttribute('class', 'nav');
     navElement.appendChild(createTagImg(urlImg, ALT));
@@ -25,7 +25,7 @@ function createTagUl(LI) {
     return ulElement;
 }
 
-function createTagImg(urlImg, ALT) {
+function createTagImg({ urlImg, ALT } = {}) {
     let imgElement = document.createElement('img');
     imgElement.setAttribute('src', urlImg);
     imgElement.setAttribute('alt', ALT);
