@@ -29,4 +29,4 @@ let URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color
         ALT: 'Google'
     });
 
-window.onload = NavHelper;
+window.onready = NavHelper;
