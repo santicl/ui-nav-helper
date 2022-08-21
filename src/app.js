@@ -19,9 +19,9 @@ let URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color
     NavHelper('app', {
         urlImg: URL, // url image
         lists: [  // array of object { tag, href } for TAG A element
-            { tag: 'Home', href: 'index.html' }, 
-            { tag: 'About', href: 'about.html' }, 
-            { tag: 'Contact', href: 'contact.html' } 
+            { tagText: 'Home', href: 'index.html' }, 
+            { tagText: 'About', href: 'about.html' }, 
+            { tagText: 'Contact', href: 'contact.html' } 
         ],
         // styles = 'normal' or 'ui-gradients';
         styles: 'ui-gradients',

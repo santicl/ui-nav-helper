@@ -31,10 +31,10 @@ function createNav(data) {
 function createTagUl(LI) {
     let ulElement = document.createElement('ul');
     for (let i = 0; i < LI.length; i++) {
-        let { tag, href } = LI[i];
+        let { tagText, href } = LI[i];
         let liElement = document.createElement('li');
         let aElement = createTagA();
-        aElement.innerHTML = tag;
+        aElement.innerHTML = tagText;
         aElement.setAttribute('href', href);
         liElement.setAttribute('class', 'li');
         liElement.appendChild(aElement);
