@@ -11,7 +11,7 @@
  * 
  */
 
-export function NavHelper(ID = null, { urlImg = null, lists = [], colors = [length = 2], styles = '', ALT = String } = {}) {
+export function NavHelper(ID = null, { urlImg = null, lists = [], colors = { firstColor: '', secondColor: '' }, styles = '', ALT = String } = {}) {
     try {
         let dataArguments = { urlImg, lists, colors, styles, ALT };
         document.getElementById(ID).appendChild(createNav(dataArguments));
@@ -22,14 +22,15 @@ export function NavHelper(ID = null, { urlImg = null, lists = [], colors = [leng
 
 function createNav(data) {
     let { urlImg, lists, colors, styles, ALT } = data;
+    let { firstColor, secondColor } = colors;
     let navElement = document.createElement('nav');
     let className = 'normal' ? 'nav' : styles;
     navElement.setAttribute('class', className);
     navElement.appendChild(createTagImg(urlImg, ALT));
     navElement.appendChild(createTagUl(lists));
     navElement.appendChild(createTagI());
-    navElement.style.background = styles == 'normal' ? '#d1b7b7'
-        : `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
+    navElement.style.background = styles == 'normal' ? `${firstColor}`
+        : `linear-gradient(to right, ${firstColor}, ${secondColor})`;
     return navElement;
 }
 
