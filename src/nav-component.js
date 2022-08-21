@@ -11,9 +11,13 @@
  * 
  */
 
-export function NavHelper(ID = null, { urlImg = null, lists = [], colors = [ length = 2 ], styles = '', ALT = String } = {}) {
+export function NavHelper(ID = null, { urlImg = null, lists = [], colors = [length = 2], styles = '', ALT = String } = {}) {
     let dataArguments = { urlImg, lists, colors, styles, ALT };
-    document.getElementById(ID).appendChild(createNav(dataArguments));
+    try {
+        document.getElementById(ID).appendChild(createNav(dataArguments));
+    } catch (err) {
+        return { msj: err };
+    }
 }
 
 function createNav(data) {
@@ -24,7 +28,8 @@ function createNav(data) {
     navElement.appendChild(createTagImg(urlImg, ALT));
     navElement.appendChild(createTagUl(lists));
     navElement.appendChild(createTagI());
-    navElement.style.background = styles == 'normal' ? '#d1b7b7' : `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
+    navElement.style.background = styles == 'normal' ? '#d1b7b7'
+        : `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
     return navElement;
 }
 

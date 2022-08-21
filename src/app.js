@@ -4,7 +4,7 @@
  * ID name by element into DOM
  * { urlImg = null, lists = [], color = '', styles = '', ALT = String } = {}
  * urlImg = url image
- * lists = array of object { tag, href }
+ * lists = array of object { tag, href } for UL inside nav
  * colors = color of background with gradients
  * styles = class name of element
  * ALT = alt of image
