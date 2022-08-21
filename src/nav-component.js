@@ -16,7 +16,7 @@ export function NavHelper(ID = null, { urlImg = null, lists = [], colors = [leng
     try {
         document.getElementById(ID).appendChild(createNav(dataArguments));
     } catch (err) {
-        return { msj: err };
+        return console.log(err);
     }
 }
 
