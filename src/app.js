@@ -26,8 +26,8 @@ let URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color
         // styles = 'normal' or 'ui-gradients';
         styles: 'ui-gradients',
         colors: { // colors of background for gradients
-            firstColor: '#d1b7b7', 
-            secondColor: '#f7f1e3' 
+            toRight: '#d1b7b7', 
+            atLeft: '#f7f1e3' 
         },
         ALT: 'Google'
     });
