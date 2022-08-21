@@ -17,16 +17,16 @@ import { NavHelper } from "./nav-component.js";
 let URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
 
     NavHelper('app', {
-        urlImg: URL, // url image
-        lists: [  // array of object { tag, href } for TAG A element
+        urlImg: URL,
+        lists: [  // array of object for TAG A element
             { tagText: 'Home', href: 'index.html' }, 
             { tagText: 'About', href: 'about.html' }, 
             { tagText: 'Contact', href: 'contact.html' } 
         ],
         // styles = 'normal' or 'ui-gradients';
         styles: 'ui-gradients',
-        colors: ['#d1b7b7', '#f7f1e3'], // colors of background with gradients
-        ALT: 'Google' // alt of image
+        colors: ['#d1b7b7', '#f7f1e3'], // colors of background for gradients
+        ALT: 'Google'
     });
 
 window.onload = NavHelper;
