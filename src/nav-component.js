@@ -11,22 +11,23 @@
  * 
  */
 
-export function NavHelper(ID = null, { urlImg = null, lists = [], colors = { toRight: '', atLeft: '' }, styles = '', ALT = String } = {}) {
+export function NavHelper(ID = null, { imgContent = { URL: null, ALT: null }, lists = [], colors = { toRight: '', atLeft: '' }, styles = '' } = {}) {
     try {
-        let dataArguments = { urlImg, lists, colors, styles, ALT };
-        document.getElementById(ID).appendChild(createNav(dataArguments));
+        let dataArguments = { imgContent, lists, colors, styles };
+        document.getElementById(ID).firstChild.nextSibling // Add nav in first position at container by ID
+            .insertAdjacentElement("beforebegin", createNav(dataArguments));
     } catch (err) {
         return console.log(err);
     }
 }
 
 function createNav(data) {
-    let { urlImg, lists, colors, styles, ALT } = data;
+    let { imgContent, lists, colors, styles } = data;
     let { toRight, atLeft } = colors;
     let navElement = document.createElement('nav');
     let className = 'normal' ? 'nav' : styles;
     navElement.setAttribute('class', className);
-    navElement.appendChild(createTagImg(urlImg, ALT));
+    navElement.appendChild(createTagImg(imgContent));
     navElement.appendChild(createTagUl(lists));
     navElement.appendChild(createTagI());
     navElement.style.background = styles == 'normal' ? `${toRight}`
@@ -49,9 +50,10 @@ function createTagUl(LI) {
     return ulElement;
 }
 
-function createTagImg(urlImg, ALT) {
+function createTagImg(imgContent) {
+    let { URL, ALT } = imgContent;
     let imgElement = document.createElement('img');
-    imgElement.setAttribute('src', urlImg);
+    imgElement.setAttribute('src', URL);
     imgElement.setAttribute('alt', ALT);
     return imgElement;
 }

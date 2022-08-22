@@ -1,6 +1,8 @@
 {
   "name": "ui-nav-helper",
   "version": "1.0.0",
-  "author": "Santicl",
+  "description": "",
+  "main": "src/nav-component.js",
+  "author": "santicl",
   "license": "ISC"
 }

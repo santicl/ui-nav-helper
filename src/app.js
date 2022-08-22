@@ -2,7 +2,7 @@
  * 
  * @param 
  * ID name by element into DOM
- * { urlImg = null, lists = [], color = '', styles = '', ALT = String } = {}
+ * { urlImg = { URL, ALT }, lists = [], color = '', styles = '' } = {}
  * urlImg = url image
  * lists = array of object { tag, href } for UL inside nav
  * colors = color of background with gradients
@@ -17,7 +17,10 @@ import { NavHelper } from "./nav-component.js";
 let URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
 
     NavHelper('app', {
-        urlImg: URL,
+        imgContent: {
+            URL: URL,
+            ALT: 'Google'
+        },
         lists: [  // array of object for TAG A element
             { tagText: 'Home', href: 'index.html' }, 
             { tagText: 'About', href: 'about.html' }, 
@@ -28,8 +31,7 @@ let URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color
         colors: { // colors of background for gradients
             toRight: '#d1b7b7', 
             atLeft: '#f7f1e3' 
-        },
-        ALT: 'Google'
+        }
     });
 
 window.onready = NavHelper;
