@@ -25,7 +25,8 @@ function createNav(data) {
     let { imgContent, lists, colors, styles } = data;
     let { toRight, atLeft } = colors;
     let navElement = document.createElement('nav');
-    let className = 'normal' ? 'nav' : styles;
+    let className = styles == 'normal' ? 'nav' : styles;
+    console.log(className, styles);
     navElement.setAttribute('class', className);
     navElement.appendChild(createTagImg(imgContent));
     navElement.appendChild(createTagUl(lists));
