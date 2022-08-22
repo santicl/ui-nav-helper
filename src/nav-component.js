@@ -24,38 +24,50 @@ export function NavHelper(ID = null, { imgContent = { URL: null, ALT: null }, li
 function createNav(data) {
     let { imgContent, lists, colors, styles } = data;
     let { toRight, atLeft } = colors;
-    let navElement = document.createElement('nav');
-    let className = styles == 'normal' ? 'nav' : styles;
-    navElement.setAttribute('class', className);
-    navElement.appendChild(createTagImg(imgContent));
-    navElement.appendChild(createTagUl(lists));
-    navElement.appendChild(createTagI());
-    navElement.style.background = styles == 'normal' ? `${toRight}`
-        : `linear-gradient(to right, ${toRight}, ${atLeft})`;
-    return navElement;
+    if (toRight === '' || atLeft === '') {
+        throw new Error('Colors variables incomplete');
+    } else {
+        let navElement = document.createElement('nav');
+        let className = styles == 'normal' ? 'nav' : styles;
+        navElement.setAttribute('class', className);
+        navElement.appendChild(createTagImg(imgContent));
+        navElement.appendChild(createTagUl(lists));
+        navElement.appendChild(createTagI());
+        navElement.style.background = styles == 'normal' ? `${toRight}`
+            : `linear-gradient(to right, ${toRight}, ${atLeft})`;
+        return navElement;
+    }
 }
 
 function createTagUl(LI) {
     let ulElement = document.createElement('ul');
-    for (let i = 0; i < LI.length; i++) {
-        let { tagText, href } = LI[i];
-        let liElement = document.createElement('li');
-        let aElement = createTagA();
-        aElement.innerHTML = tagText;
-        aElement.setAttribute('href', href);
-        liElement.setAttribute('class', 'li');
-        liElement.appendChild(aElement);
-        ulElement.appendChild(liElement);
+    if (LI.length === 0) {
+        throw new Error('Lists spaces is empty');
+    } else {
+        for (let i = 0; i < LI.length; i++) {
+            let { tagText, href } = LI[i];
+            let liElement = document.createElement('li');
+            let aElement = createTagA();
+            aElement.innerHTML = tagText;
+            aElement.setAttribute('href', href);
+            liElement.setAttribute('class', 'li');
+            liElement.appendChild(aElement);
+            ulElement.appendChild(liElement);
+        }
+        return ulElement;
     }
-    return ulElement;
 }
 
 function createTagImg(imgContent) {
     let { URL, ALT } = imgContent;
     let imgElement = document.createElement('img');
-    imgElement.setAttribute('src', URL);
-    imgElement.setAttribute('alt', ALT);
-    return imgElement;
+    if (URL === null || ALT === null) {
+        throw new Error('Image variables incomplete');
+    } else {
+        imgElement.setAttribute('src', URL);
+        imgElement.setAttribute('alt', ALT);
+        return imgElement;
+    }
 }
 
 function createTagI() {
