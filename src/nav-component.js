@@ -18,13 +18,13 @@
  * 
  * **/
 
-export function NavHelper(ID = null, { imgContent = { URL: null, ALT: null }, lists = [], dropdown = [ text = { tagText:'', href:'' } ], colors = { toRight: '', atLeft: '' }, styles = '' } = {}) {
+export function NavHelper(ID = null, { imgContent = { URL: null, ALT: null }, lists = [], dropdown = [text = { tagText: '', href: '' }], colors = { toRight: '', atLeft: '' }, styles = '' } = {}) {
     try {
         let dataArguments = { imgContent, lists, colors, styles };
         document.getElementById(ID).firstChild.nextSibling // Add nav in first position at container by ID
             .insertAdjacentElement('beforebegin', createNav(dataArguments))
             .setAttribute('id', 'nav');
-            let forDropdown = { dropdown, ID, lists, nav:'nav' };
+        let forDropdown = { dropdown, ID, lists, nav: 'nav' };
         verifyStatusNav(forDropdown);
     } catch (err) {
         return console.log(err);
@@ -56,6 +56,15 @@ function verifyStatusNav(data) {// verify status of nav | visible | hidden
     if (document.getElementById(nav).style.visibility === 'visible') {
         pushDropdown(data);
     }
+    getFontFamilyOfBody(nav);
+}
+
+function getFontFamilyOfBody(nav) {// get font family of body
+    let body = document.body;
+    let font = body.style.fontFamily;
+    let navElement = document.getElementById(nav);
+    font === '' ? navElement.style.fontFamily = 'sans-serif'
+        : navElement.style.fontFamily = font;
 }
 
 function pushDropdown(data) { // push dropdown in li

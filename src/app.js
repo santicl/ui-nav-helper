@@ -27,7 +27,7 @@ NavHelper('app', {
         { tagText: 'Contact', href: 'contact.html' },
         { tagText: 'Services', href: 'services.html' },
     ],
-    dropdown: [ // Add items with tagText and href for dropdown
+    dropdown: [ // At name items add name lists with tagText and href for dropdown
         {
             'Services': [
                 { tagText: 'Web Design', href: 'web-design.html' },
@@ -40,7 +40,6 @@ NavHelper('app', {
                 { tagText: 'Team', href: 'team.html' }
             ]
         }
-        //{ nameTagText: 'Services', tagText: 'Dropdown 1', href: 'dropdown1.html' }
     ],
     // styles = 'normal' or 'ui-gradients';
     styles: 'ui-gradients',
