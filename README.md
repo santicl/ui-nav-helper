@@ -1,5 +1,10 @@
 # ui-nav-helper
-Ayuda a crear la navegación rápida con dos tipos de diseños(Diseño predefinido, Diseño con gradiente), solo se agrega varios parámetros y tendrás tu navegación en tu sitio web
+Ayuda a crear la navegación rápida con dos tipos de diseños(Diseño predefinido, Diseño con gradiente), solo se agrega varios parámetros y tendrás tu navegación en tu sitio web.
+
+## View
+
+<img src="https://github.com/santicl/ui-nav-helper/blob/master/assets/img/nav.png" />
+
 ## Use
 
 _JavaScript_
