@@ -3,6 +3,20 @@
     padding: 0;
 }
 
+.container-info {
+    padding: 15px;
+}
+
+h1 {
+    color: black;
+    font-size: 25px;
+}
+
+p {
+    color: gray;
+    margin-top: 15px;
+}
+
 .nav, .ui-gradients {
     display: flex;
     position: relative;
@@ -22,7 +36,6 @@
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
 }
 
 .nav ul li a:hover, .ui-gradients ul li a:hover {
@@ -54,11 +67,15 @@ img {
     width: 100px;
 }
 
+#-dropdown {
+   display: flex;
+   align-items: center;
+}
+
 .dropdown-ul {
     width: 150px;
     display: grid;
     position: fixed;
-    transition: ease-in-out 0.3s;
     background: rgb(223, 202, 202);
     border-radius: 10px;
     height: 120px;
