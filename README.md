@@ -70,6 +70,8 @@ dropdown: [ // At name items add name lists with tagText and href for dropdown
     }
 ```
 
+## View all example: https://github.com/santicl/ui-nav-helper/blob/master/src/app.js
+
 ## Template
 
 ```html
